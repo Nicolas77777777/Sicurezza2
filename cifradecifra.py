@@ -1,5 +1,3 @@
-
-# fare pip install pycryptodome
 from Crypto.Cipher import AES
 import base64
 
@@ -23,24 +21,10 @@ def decrypt(encrypted_text, key):
 
 # Example usage
 key = "ThisIsASecretKey"
-plain_text = "0"
-
-
+plain_text = "Hello, World!"
 encrypted_text = encrypt(plain_text, key)
 decrypted_text = decrypt(encrypted_text, key)
 
 print("Plain Text:", plain_text)
-print("Encrypted Text:", encrypted_text,len(encrypted_text))
-print("Decrypted Text:", decrypted_text,len(decrypted_text))
-
-
-# Example usage
-key1 = "ThisIsASecretKey"
-plain_text1 = "1"
-
-encrypted_text1 = encrypt(plain_text1, key1)
-decrypted_text1 = decrypt(encrypted_text1, key1)
-
-print("Plain Text:", plain_text1)
-print("Encrypted Text:", encrypted_text1,len(encrypted_text1))
-print("Decrypted Text:", decrypted_text1,len(decrypted_text1))
+print("Encrypted Text:", encrypted_text)
+print("Decrypted Text:", decrypted_text)
