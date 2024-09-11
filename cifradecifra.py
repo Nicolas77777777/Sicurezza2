@@ -20,11 +20,27 @@ def decrypt(encrypted_text, key):
     return decrypted_text
 
 # Example usage
-key = "ThisIsASecretKey"
-plain_text = "Hello, World!"
+key = "ThisIsASecretKey" # 16 caratteri 
+plain_text = "01234567890123456"
 encrypted_text = encrypt(plain_text, key)
 decrypted_text = decrypt(encrypted_text, key)
 
 print("Plain Text:", plain_text)
 print("Encrypted Text:", encrypted_text)
 print("Decrypted Text:", decrypted_text)
+
+#prova di decifra brute force
+enc = "OgJuOYJZT0FDb47DBOkNgA=="
+key = "XXXXIsASecretKey"
+for p1 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+    for p2 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+        for p3 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            for p4 in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
+                key = p1 + p2 + p3 + p4 + "IsASecretKey"
+                try:
+                    dec = decrypt(enc, key)
+
+                    print("La chiave è: ", key, " e la stringa è: ", dec)
+                except:
+                    # continua
+                    continue
